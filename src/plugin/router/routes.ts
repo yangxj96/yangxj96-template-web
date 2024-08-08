@@ -28,17 +28,14 @@ export default [
         path: "",
         component: () => import("@/views/Home/index.vue"),
         meta: {
-          title: "首页"
+          title: "前端VUE项目模板"
         }
       },
       {
         // 错误页
         name: "error",
         path: "/error/:code",
-        component: () => import("@/views/Error/index.vue"),
-        meta: {
-          title: "路由错误"
-        }
+        component: () => import("@/views/Error/index.vue")
       }
     ]
   }

@@ -25,4 +25,59 @@ export default class CommonUtils {
       return v.toString(16);
     });
   }
+
+  /**
+   * 时间格式化
+   * @param date 时间
+   * @param formatter 格式化字符串
+   */
+  public static formatDate(date: Date, formatter: "date" | "datetime" | string) {
+    const func = this._formatDateNormalize(formatter);
+    const dateInfo = {
+      yyyy: date.getFullYear(),
+      M: date.getMonth() + 1,
+      d: date.getDate(),
+      H: date.getHours(),
+      m: date.getMinutes(),
+      s: date.getSeconds(),
+      MM: ("" + (date.getMonth() + 101)).substring(1),
+      dd: ("" + (date.getDate() + 100)).substring(1),
+      HH: ("" + (date.getHours() + 100)).substring(1),
+      mm: ("" + (date.getMinutes() + 100)).substring(1),
+      ss: ("" + (date.getSeconds() + 100)).substring(1)
+    };
+    return func(dateInfo);
+  }
+
+  /**
+   * 格式化时间的参数归一化
+   * @param formatter 格式化
+   * @private
+   */
+  private static _formatDateNormalize(formatter: string) {
+    if (typeof formatter === "function") {
+      return formatter;
+    }
+    if (formatter === "date") {
+      formatter = "yyyy-MM-dd";
+    }
+    if (formatter === "datetime") {
+      formatter = "yyyy-MM-dd HH:mm:ss";
+    }
+    return (dateInfo: any) => {
+      return formatter
+        .replaceAll("yyyy", dateInfo.yyyy)
+        .replaceAll("MM", dateInfo.MM)
+        .replaceAll("dd", dateInfo.dd)
+        .replaceAll("HH", dateInfo.HH)
+        .replaceAll("mm", dateInfo.mm)
+        .replaceAll("ss", dateInfo.ss)
+        .replaceAll("ms", dateInfo.ms)
+        .replaceAll("M", dateInfo.M)
+        .replaceAll("d", dateInfo.d)
+        .replaceAll("H", dateInfo.H)
+        .replaceAll("m", dateInfo.m)
+        .replaceAll("s", dateInfo.s);
+    };
+  }
 }
