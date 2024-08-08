@@ -14,19 +14,13 @@ const router = createRouter({
 // 路由前置守卫
 router.beforeEach(async to => {
   console.debug("[路由守卫 - 前置] - 开始");
-  console.log(`[路由守卫 - 前置] - ${to.name as string}`);
-  if (!to.name) {
+  if (!to.name || !router.hasRoute(to.name as string)) {
     return {
-      //path: "/error",
       name: "error",
       params: {
         code: 404
       }
     };
-    // throw Error("路由不合法");
-  }
-  if (!router.hasRoute(to.name as string)) {
-    throw Error("路由不存在");
   }
   console.debug("[路由守卫 - 前置] - 解析守卫结束");
 });
