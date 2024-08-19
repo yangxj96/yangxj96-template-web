@@ -22,18 +22,18 @@
       "pre-commit": "yarn format && yarn lint && yarn type-check"
     }
   },
-  "homepage": "https://github.com/yangxj96/yangxj96-saas-admin",
+  "homepage": "https://github.com/yangxj96/yangxj96-template-web",
   "keywords": [
     "SAAS",
     "VUE"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yangxj96/yangxj96-saas-admin"
+    "url": "https://github.com/yangxj96/yangxj96-template-web"
   },
   "bugs": {
     "email": "yangxj96@gmail.com",
-    "url": "https://github.com/yangxj96/yangxj96-saas-admin/issues"
+    "url": "https://github.com/yangxj96/yangxj96-template-web/issues"
   },
   "dependencies": {
     "@stomp/stompjs": "7.0.0",
