@@ -23,10 +23,7 @@
     }
   },
   "homepage": "https://github.com/yangxj96/yangxj96-template-web",
-  "keywords": [
-    "SAAS",
-    "VUE"
-  ],
+  "keywords": [],
   "repository": {
     "type": "git",
     "url": "https://github.com/yangxj96/yangxj96-template-web"
@@ -80,5 +77,8 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "volta": {
+    "node": "20.16.0"
+  }
 }
