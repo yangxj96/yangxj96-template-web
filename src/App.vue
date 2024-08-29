@@ -9,6 +9,11 @@
 <script lang="ts" setup>
 import { reactive, ref } from "vue";
 import useAppStore from "@/plugin/store/modules/useAppStore";
+import { useInterval } from "@vueuse/core";
+
+useInterval(() => {
+  console.log("执行");
+}, 5000);
 
 const locale = ref(useAppStore().lang);
 const message = reactive({
