@@ -9,7 +9,7 @@
 
 <script lang="ts" setup>
 import type { UploadRequestOptions } from "element-plus";
-import FileHelper from "@/utils/FileHelper";
+import FileHelper from "@/helper/FileHelper";
 
 const SHARDING_SIZE = 1024 * 1024 * 5;
 

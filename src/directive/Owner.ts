@@ -1,6 +1,6 @@
 import type { Directive, DirectiveBinding } from "vue";
 import useUserStore from "@/plugin/store/modules/useUserStore";
-import CommonUtils from "@/utils/CommonUtils";
+import CommonHelper from "@/helper/CommonHelper";
 
 let del: boolean = false;
 
@@ -14,7 +14,7 @@ export default {
   },
   mounted(el: HTMLElement) {
     if (del) {
-      el.id = CommonUtils.UUID();
+      el.id = CommonHelper.UUID();
       document.getElementById(el.id)?.remove();
     }
   }

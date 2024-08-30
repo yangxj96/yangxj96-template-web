@@ -1,4 +1,4 @@
-export default class CommonUtils {
+export default class CommonHelper {
   /**
    * 获取随机数
    * @param min 最小数
