@@ -13,8 +13,8 @@
         <div style="height: 100%">
           <el-row>
             <i class="box-unfold-a" @click="chooseSidebarUnfold">
-              <icons name="icon-caret-left" v-if="systemStore.sidebar_unfold" />
-              <icons name="icon-caret-right" v-else />
+              <icons v-if="systemStore.sidebar_unfold" name="icon-caret-left" />
+              <icons v-else name="icon-caret-right" />
             </i>
             <!-- 面包屑 -->
             <el-breadcrumb separator-class="el-icon-arrow-right">

@@ -1,6 +1,6 @@
 <template>
   <svg :class="svgClass" aria-hidden="true">
-    <use class="svg-use" v-bind:xlink:href="symbolId" />
+    <use class="svg-use" :xlink:href="symbolId" />
   </svg>
 </template>
 
@@ -16,7 +16,8 @@ export default defineComponent({
     },
     name: {
       type: String,
-      require: true
+      require: true,
+      default: "icon-home"
     },
     className: {
       type: String,
