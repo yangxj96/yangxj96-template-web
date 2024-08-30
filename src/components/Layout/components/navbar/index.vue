@@ -36,6 +36,8 @@
 import icons from "@/components/common/Icons.vue";
 import { useRouter } from "vue-router";
 import { stopAllRequest } from "@/plugin/request";
+import UserApi from "@/api/UserApi";
+import useUserStore from "@/plugin/store/modules/useUserStore";
 
 const router = useRouter();
 
@@ -44,7 +46,16 @@ function gotoHome() {
 }
 
 function handleUserLogout() {
-  stopAllRequest();
+  UserApi.logout().finally(() => {
+    // 停止所有请求
+    stopAllRequest();
+    // 清空全局状态
+    useUserStore().$patch({
+      token: {}
+    });
+    // 刷新当前页面,防止错误
+    location.reload();
+  });
 }
 </script>
 
